@@ -1,0 +1,112 @@
+/* reset me */
+
+div, p {
+	display: block;
+}
+
+* {margin: 0; padding: 0}
+div,span,li,ul,ol,p {
+	position: relative;
+}
+
+.container::after, .container::before {
+	clear: both;
+	display: table;
+	height: 0;
+	content: "";
+}
+
+/* the meat of it */
+.container {
+    width: 550px;
+    margin: 0 auto;
+}
+.teal-box {
+	background: #64ccc9;
+	margin-top: 45px;
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.inner-box {
+	border: 2px solid #ffffff;
+  margin: 5px;
+}
+
+.inner-box h5 {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #64ccc9;
+	position: relative;
+	top: -10px;
+	max-width: 320px;
+	width: 150px;
+	letter-spacing: 1px;
+	margin: 0 auto;
+	font-weight: 700;
+}
+
+.remind-title {
+	font-weight: 400;
+	font-family: 'IBM Plex Serif', serif;
+	letter-spacing: -1px;
+	font-size: 56px;
+}
+
+.inner-box p {
+	color: #fff;
+	width: 350px;
+	margin: 0 auto;
+	font-weight: 400;
+	line-height: 1.65;
+}
+
+form {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+input.email-box {
+	color: #fff;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.btn.transparent {
+	background: #fff;
+	border-radius: 3px;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	position: relative;
+    top: 0;
+    padding: 10px 15px;
+    color: #567a96;
+}
+
+p.small {
+	margin-top:10px;
+	font-family: 'IBM Plex Serif', serif;
+	margin-bottom: 15px;
+}
+
+.message-text {
+	color: #fff;
+}
+
+.alert-danger p {
+	color:#000;
+	font-weight: bold;
+}

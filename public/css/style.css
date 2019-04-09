@@ -1,0 +1,9 @@
+.disabled-div {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  @media screen and (max-width: 1007px) {
+      .right-col button {
+          margin-top:20px;
+      }
+  }

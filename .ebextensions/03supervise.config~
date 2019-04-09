@@ -1,0 +1,33 @@
+
+# supervisor
+#
+# Author: Günter Grodotzki <gunter@grodotzki.co.za>
+# Version: 2015-04-25
+#
+# set param "SUPERVISE=enable" to activate
+#
+Resources:
+  AWSEBAutoScalingGroup:
+    Metadata:
+      AWS::CloudFormation::Authentication:
+        S3Auth:
+          type: "s3"
+          buckets: ["elasticbeanstalk-us-west-2-400679828568"]
+          roleName:
+            "Fn::GetOptionSetting":
+              Namespace: "aws:autoscaling:launchconfiguration"
+              OptionName: "IamInstanceProfile"
+              DefaultValue: "aws-elasticbeanstalk-ec2-role"
+files:  
+  "/tmp/supervise.sh": 
+     mode: "000700"
+     owner: root
+     group: root
+     authentication: "S3Auth"
+     source: https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-400679828568/supervise.sh
+packages:
+  yum:
+    python27-setuptools: []
+container_commands:
+  01-supervise:
+    command: "/tmp/supervise.sh"
